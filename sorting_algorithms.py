@@ -22,3 +22,21 @@ def selection_sort(theSeq):
         print(theSeq)
     
     return theSeq
+
+def selection_sort_v2(theSeq):
+    n = len(theSeq)
+    for i in range(n-1, 0, -1):
+        highNdx = i
+        # Finds the highest in the remaining items (i -> end)
+        for j in range(i):
+            if(theSeq[j] > theSeq[highNdx]):
+                highNdx = j
+        # SWAP operation - swaps the value at i with the smallest remaining value
+        if highNdx != i:
+            tmp = theSeq[i]
+            theSeq[i] = theSeq[highNdx]
+            theSeq[highNdx] = tmp
+        
+        print(theSeq)
+    
+    return theSeq
